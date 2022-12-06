@@ -1,0 +1,8 @@
+require("bek.plugins-setup")
+require("bek.core.options")
+require("bek.core.keymaps")
+require("bek.core.colorscheme")
+require("bek.plugins.nvim-tree")
+require("bek.plugins.telescope")
+require("bek.plugins.lualine")
+require("bek.plugins.lspconfig")
