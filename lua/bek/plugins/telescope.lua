@@ -54,6 +54,7 @@ local function telescope_buffer_dir()
 end
 
 require("telescope").load_extension "file_browser"
+require("telescope").load_extension "lazygit"
 vim.keymap.set("n", "<leader>ff", function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",

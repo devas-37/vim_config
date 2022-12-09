@@ -59,6 +59,7 @@ return packer.startup(function(use)
   -- Mason
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
+  use 'kdheepak/lazygit.nvim'
   use { 'nvim-treesitter/nvim-treesitter',
     run = ":TSUpdate" }
   if packer_bootstrap then
