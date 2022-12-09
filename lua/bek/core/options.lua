@@ -1,6 +1,6 @@
 local opt = vim.opt
 -- line numbers
-opt.relativenumber = true
+opt.relativenumber = false
 opt.number = true
 
 -- tabs & indents
@@ -37,5 +37,3 @@ opt.clipboard:append("unnamedplus")
 opt.splitright = true
 opt.splitbelow = true
 opt.iskeyword:append("-")
-
-

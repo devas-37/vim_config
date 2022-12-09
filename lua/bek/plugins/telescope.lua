@@ -1,4 +1,8 @@
-require('telescope').setup{
+local actions = require("telescope.actions")
+local fb_actions = require "telescope".extensions.file_browser.actions
+
+local telescope = require 'telescope'
+telescope.setup {
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
@@ -8,6 +12,16 @@ require('telescope').setup{
         -- actions.which_key shows the mappings for your picker,
         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
         ["<C-h>"] = "which_key"
+      },
+      n = {
+        f = false,
+        ["q"] = actions.close
+        , ["N"] = fb_actions.create,
+        ["h"] = fb_actions.goto_parent_dir,
+        ["/"] = function()
+          vim.cmd('startinsert')
+        end,
+        ['<leader>rr'] = fb_actions.rename
       }
     }
   },
@@ -27,5 +41,28 @@ require('telescope').setup{
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
+    file_browser = {
+      theme = "dropdown",
+      hijack_netrw = true,
+
+    }
   }
+
 }
+local function telescope_buffer_dir()
+  return vim.fn.expand('%:p:h')
+end
+
+require("telescope").load_extension "file_browser"
+vim.keymap.set("n", "<leader>ff", function()
+  telescope.extensions.file_browser.file_browser({
+    path = "%:p:h",
+    cwd = telescope_buffer_dir(),
+    respect_gitignore = false,
+    hidden = true,
+    grouped = true,
+    previewer = false,
+    initial_mode = "normal",
+    layout_config = { height = 40 }
+  })
+end)
