@@ -61,7 +61,7 @@ vim.keymap.set("n", "<leader>ff", function()
     cwd = telescope_buffer_dir(),
     cwd_to_path = true,
     respect_gitignore = false,
-    hidden = false,
+    hidden = true,
     grouped = true,
     previewer = false,
     initial_mode = "normal",
