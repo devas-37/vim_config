@@ -13,6 +13,7 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[augroup END]]
   end
 end
+
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },

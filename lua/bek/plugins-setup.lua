@@ -53,6 +53,8 @@ return packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
   use 'dinhhuy258/git.nvim'
   use 'akinsho/toggleterm.nvim'
+  --Blank line
+  use 'lukas-reineke/indent-blankline.nvim'
   --- Prettier
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'MunifTanjim/prettier.nvim'
