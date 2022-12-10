@@ -60,6 +60,13 @@ return packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'kdheepak/lazygit.nvim'
+  -- Comment
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require("Comment").setup()
+    end
+  }
   use { 'nvim-treesitter/nvim-treesitter',
     run = ":TSUpdate" }
   if packer_bootstrap then

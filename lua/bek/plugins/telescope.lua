@@ -1,70 +1,99 @@
-local actions = require("telescope.actions")
-local fb_actions = require "telescope".extensions.file_browser.actions
-
-local telescope = require 'telescope'
-telescope.setup {
+-- local actions = require("telescope.actions")
+-- local fb_actions = require "telescope".extensions.file_browser.actions
+--
+-- local telescope = require 'telescope'
+-- telescope.setup {
+--   defaults = {
+--     mappings = {
+--       i = {
+--         ["<C-h>"] = "which_key"
+--       },
+--       n = {
+--         f = false,
+--         ["q"] = actions.close
+--         , ["N"] = fb_actions.create,
+--         ["h"] = fb_actions.goto_parent_dir,
+--         ["/"] = function()
+--           vim.cmd('startinsert')
+--         end,
+--         ['<leader>rr'] = fb_actions.rename
+--       }
+--     }
+--   },
+--   pickers = {
+--   },
+--   extensions = {
+--     file_browser = {
+--       hijack_netrw = true,
+--
+--     }
+--   }
+--
+-- }
+-- local function telescope_buffer_dir()
+--   return vim.fn.expand('%:p:h')
+-- end
+--
+-- require("telescope").load_extension "file_browser"
+-- vim.keymap.set("n", "<leader>ft", function()
+--   telescope.extensions.file_browser.file_browser({
+--     path = "%:p:h",
+--     cwd = telescope_buffer_dir(),
+--     cwd_to_path = true,
+--     respect_gitignore = false,
+--     hidden = true,
+--     grouped = true,
+--     initial_mode = "normal",
+--     layout_config = { height = 40 }
+--   })
+-- end)
+local actions = require('telescope.actions')
+require('telescope').setup {
   defaults = {
-    -- Default configuration for telescope goes here:
-    -- config_key = value,
+    layout_config = {
+      width = 0.75,
+      prompt_position = "bottom",
+      preview_cutoff = 120,
+      horizontal = { mirror = false },
+      vertical = { mirror = true }
+    },
+    find_command = {
+      'rg', '--no-heading', '--with-filename', '--line-number', '--column'
+    },
+    prompt_prefix = " ",
+    selection_caret = "- ",
+    entry_prefix = "  ",
+    initial_mode = "insert",
+    selection_strategy = "reset",
+    sorting_strategy = "descending",
+    layout_strategy = "horizontal",
+    file_sorter = require 'telescope.sorters'.get_fuzzy_file,
+    file_ignore_patterns = {},
+    generic_sorter = require 'telescope.sorters'.get_generic_fuzzy_sorter,
+    path_display = {},
+    winblend = 0,
+    border = {},
+    borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
+    color_devicons = true,
+    use_less = true,
+    set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
+    file_previewer = require 'telescope.previewers'.vim_buffer_cat.new,
+    grep_previewer = require 'telescope.previewers'.vim_buffer_vimgrep.new,
+    qflist_previewer = require 'telescope.previewers'.vim_buffer_qflist.new,
+    buffer_previewer_maker = require 'telescope.previewers'.buffer_previewer_maker,
     mappings = {
       i = {
-        -- map actions.which_key to <C-h> (default: <C-/>)
-        -- actions.which_key shows the mappings for your picker,
-        -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-        ["<C-h>"] = "which_key"
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+        ["<esc>"] = actions.close,
+        ["<CR>"] = actions.select_default + actions.center
       },
       n = {
-        f = false,
-        ["q"] = actions.close
-        , ["N"] = fb_actions.create,
-        ["h"] = fb_actions.goto_parent_dir,
-        ["/"] = function()
-          vim.cmd('startinsert')
-        end,
-        ['<leader>rr'] = fb_actions.rename
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
       }
     }
-  },
-  pickers = {
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
-  },
-  extensions = {
-    -- Your extension configuration goes here:
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
-    file_browser = {
-      theme = "dropdown",
-      hijack_netrw = true,
-
-    }
   }
-
 }
-local function telescope_buffer_dir()
-  return vim.fn.expand('%:p:h')
-end
-
-require("telescope").load_extension "file_browser"
-require("telescope").load_extension "lazygit"
-vim.keymap.set("n", "<leader>ff", function()
-  telescope.extensions.file_browser.file_browser({
-    path = "%:p:h",
-    cwd = telescope_buffer_dir(),
-    cwd_to_path = true,
-    respect_gitignore = false,
-    hidden = true,
-    grouped = true,
-    previewer = false,
-    initial_mode = "normal",
-    layout_config = { height = 40 }
-  })
-end)

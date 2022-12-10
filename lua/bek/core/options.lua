@@ -37,3 +37,11 @@ opt.clipboard:append("unnamedplus")
 opt.splitright = true
 opt.splitbelow = true
 opt.iskeyword:append("-")
+vim.keymap.set("n", "<A-Down>", ":m+<CR>", {})
+vim.keymap.set("n", "<A-Up>", ":m-2<CR>", {})
+vim.keymap.set("n", "<A-j>", ":m-2<CR>", {})
+vim.keymap.set("n", "<A-k>", ":m+<CR>", {})
+-- vim.keymap.set("n", "<Down>", "<Nop>", {})
+-- vim.keymap.set("n", "<Up>", "<Nop>", {})
+-- vim.keymap.set("n", "<Left>", "<Nop>", {})
+-- vim.keymap.set("n", "<Right>", "<Nop>", {})
