@@ -26,8 +26,8 @@ end
 
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
+  use 'ray-x/aurora'
   use("bluz71/vim-nightfly-guicolors")
-  use("christoomey/vim-tmux-navigator")
   use("szw/vim-maximizer")
   use("tpope/vim-surround")
   use("vim-scripts/ReplaceWithRegister")
@@ -35,6 +35,9 @@ return packer.startup(function(use)
   use { "nvim-telescope/telescope.nvim", tag = "0.1.0" }
   use "nvim-telescope/telescope-file-browser.nvim"
   use 'kyazdani42/nvim-web-devicons'
+  -- neosolarized
+  use 'tjdevries/colorbuddy.nvim'
+  use 'svrana/neosolarized.nvim'
   -- File Explorer
   use("nvim-tree/nvim-tree.lua")
   use "hoob3rt/lualine.nvim"
@@ -58,6 +61,9 @@ return packer.startup(function(use)
   --- Prettier
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'MunifTanjim/prettier.nvim'
+  use 'MunifTanjim/eslint.nvim'
+  -- Signature function
+  use 'ray-x/lsp_signature.nvim'
   -- Mason
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'

@@ -5,12 +5,13 @@ local protocol = require('vim.lsp.protocol')
 
 
 local on_attach = function(client, bufnr)
-  -- formatting
+  --- format on save
   if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_command [[augroup Format]]
-    vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-    vim.api.nvim_command [[augroup END]]
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = vim.api.nvim_create_augroup("Format", { clear = true }),
+      buffer = bufnr,
+      callback = function() vim.lsp.buf.formatting_seq_sync() end
+    })
   end
 end
 
@@ -27,11 +28,9 @@ nvim_lsp.sumneko_lua.setup {
       diagnostics = {
         globals = { 'vim' }
       },
-
       workspace = {
         library = vim.api.nvim_get_runtime_file("", true),
         checkThirdParty = false
-
       }
     }
   }

@@ -6,13 +6,12 @@ local function map(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, options)
 end
 
-map("i", "jk", "<ESC>")
 map("n", "<leader>nh", ":nohl<CR>")
 map("n", "<leader>+", "<C-a>")
 map("n", "<leader>sv", "<C-w>v")
 map("n", "<leader>sh", "<C-w>s")
 map("n", "<leader>se", "<C-w>=")
-map("n", "<leader>sx", ":close<CR>")
+
 
 
 
