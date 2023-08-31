@@ -17,14 +17,14 @@ vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 local opt = { silent = true }
 vim.keymap.set("n", "te", ":tabedit<Return>", opt)
 -- Split window
-vim.keymap.set("n", "ss", ":split<Return><C-w>w", opt)
-vim.keymap.set("n", "sv", ":vsplit<Return><C-w>w", opt)
+vim.keymap.set("n", "qs", ":split<Return><C-w>w", opt)
+vim.keymap.set("n", "qv", ":vsplit<Return><C-w>w", opt)
 
 -- Move window
 vim.keymap.set("n", "<Space>", "<C-w>w")
-vim.keymap.set("", "sh", "<C-w>h")
-vim.keymap.set("", "sk", "<C-w>k")
-vim.keymap.set("", "sj", "<C-w>j")
-vim.keymap.set("", "sl", "<C-w>l")
-
+vim.keymap.set("", "qh", "<C-w>h")
+vim.keymap.set("", "qk", "<C-w>k")
+vim.keymap.set("", "qj", "<C-w>j")
+vim.keymap.set("", "ql", "<C-w>l")
+vim.keymap.set("", "q:", "")
 vim.keymap.set("n", "<Esc>", "<Cmd>nohl<Return>")

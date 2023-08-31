@@ -1,9 +1,19 @@
-local status, term = pcall(require, "nvterm")
-if (not status) then return end
+local status, terminal = pcall(require, "toggleterm")
+if not status then
+	return
+end
 
+terminal.setup({
+	size = 20,
+	open_mapping = [[<A-i>]],
+	shade_terminals = true,
+	direction = "float",
+	close_on_exit = true,
+	shell = vim.o.shell,
+	float_opts = {
+		border = "curved",
+		winblend = 0,
+	},
+})
 
-term.setup()
-
-
-vim.keymap.set({ "n", "t" }, "<A-i>", function() require("nvterm.terminal").new("float") end,
-  { noremap = true, silent = true })
+vim.cmd("autocmd! TermOpen term://*")

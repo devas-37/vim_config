@@ -55,12 +55,21 @@ packer.startup(function(use)
 
 	--Linter
 	use("MunifTanjim/eslint.nvim")
-
+	use({
+		"norcalli/nvim-colorizer.lua",
+	})
+	--Comment
+	use({
+		"numToStr/Comment.nvim",
+	})
 	--Gits signs
 	use({
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup({})
 		end,
+	})
+	use({
+		"akinsho/toggleterm.nvim",
 	})
 end)
