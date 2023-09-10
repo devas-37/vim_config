@@ -4,7 +4,7 @@ if not status then
 end
 
 prettier.setup({
-	bin = "prettier",
+	bin = "prettierd",
 	filetypes = {
 		"css",
 		"javascript",

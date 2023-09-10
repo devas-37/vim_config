@@ -11,9 +11,7 @@ local field_arrangement = {
 	atom = { "kind", "abbr", "menu" },
 	default = { "kind", "abbr", "menu" },
 }
--- vim.api.nvim_set_hl(0, "MyNormal", { bg = "#011627", fg = "#ffffff" })
 local formatting_style = {
-	-- default fields order i.e completion word + item.kind + item.kind icons
 	fields = field_arrangement[cmp_style] or { "abbr", "kind", "menu" },
 
 	format = function(_, item)
@@ -25,8 +23,6 @@ local formatting_style = {
 			item.menu = cmp_ui.lspkind_text and "   (" .. item.kind .. ")" or ""
 			item.kind = icon
 		else
-			-- icon = cmp_ui.lspkind_text and (" " .. icon .. " ") or icon
-			-- item.kind = string.format("%s %s", icon, cmp_ui.lspkind_text and item.kind or "")
 			item.kind = icon
 		end
 
@@ -34,34 +30,9 @@ local formatting_style = {
 	end,
 }
 
-local function border(hl_name)
-	return {
-		{ "╭", hl_name },
-		{ "─", hl_name },
-		{ "╮", hl_name },
-		{ "│", hl_name },
-		{ "╯", hl_name },
-		{ "─", hl_name },
-		{ "╰", hl_name },
-		{ "│", hl_name },
-	}
-end
-
 local options = {
 	completion = {
 		completeopt = "menu,menuone",
-	},
-
-	window = {
-		completion = {
-			side_padding = (cmp_style ~= "atom" and cmp_style ~= "atom_colored") and 1 or 0,
-			winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel",
-			scrollbar = false,
-		},
-		documentation = {
-			border = border("CmpDocBorder"),
-			winhighlight = "Normal:CmpDoc",
-		},
 	},
 	snippet = {
 		expand = function(args)
@@ -116,12 +87,4 @@ local options = {
 	},
 }
 
-if cmp_style ~= "atom" and cmp_style ~= "atom_colored" then
-	options.window.completion.border = border("CmpDocBorder")
-end
-
 cmp.setup(options)
--- vim.cmd([[
---   set completeopt=menuone,noinsert,noselect
---   highlight! default link CmpItemKind CmpItemMenuDefault
--- ]])

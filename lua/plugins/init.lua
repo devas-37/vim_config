@@ -38,7 +38,7 @@ packer.startup(function(use)
 	--Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.2",
+		branch = "0.1.x",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use({
@@ -48,7 +48,7 @@ packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 
 	use("akinsho/bufferline.nvim")
-
+	use("voldikss/vim-floaterm")
 	-- Formatter
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("MunifTanjim/prettier.nvim")
@@ -70,6 +70,7 @@ packer.startup(function(use)
 		end,
 	})
 	use({
-		"akinsho/toggleterm.nvim",
+		"mfussenegger/nvim-lint",
 	})
+	use("NvChad/nvterm")
 end)

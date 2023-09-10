@@ -1,19 +1,15 @@
-local status, terminal = pcall(require, "toggleterm")
-if not status then
-	return
-end
+require("nvterm").setup({})
 
-terminal.setup({
-	size = 20,
-	open_mapping = [[<A-i>]],
-	shade_terminals = true,
-	direction = "float",
-	close_on_exit = true,
-	shell = vim.o.shell,
-	float_opts = {
-		border = "curved",
-		winblend = 0,
-	},
-})
+vim.keymap.set({ "n", "t" }, "<A-i>", function()
+	require("nvterm.terminal").toggle("float")
+end)
 
-vim.cmd("autocmd! TermOpen term://*")
+vim.keymap.set({ "n", "t" }, "<A-v>", function()
+	require("nvterm.terminal").toggle("vertical")
+end)
+vim.keymap.set({ "n", "t" }, "<A-h>", function()
+	require("nvterm.terminal").toggle("horizontal")
+end)
+vim.keymap.set("t", "<C-x>", "<C-\\><C-n>")
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#010f20" })
+vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#2d8bd2" })

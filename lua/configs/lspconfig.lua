@@ -3,7 +3,7 @@ if not status then
 	return
 end
 
---local protocol = require('vim.lsp.protocol')
+local protocol = require("vim.lsp.protocol")
 local signs = { Error = "󰅚 ", Warning = " ", Hint = " ", Information = " " }
 local on_attach = function(client, bufnr)
 	--format on save
@@ -24,8 +24,13 @@ nvim_lsp.tsserver.setup({
 	on_attach = on_attach,
 	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
 	cmd = { "typescript-language-server", "--stdio" },
+	-- init_options = {
+	-- 	preferences = {
+	-- 		disableSuggestions = true,
+	-- 	},
+	-- },
 })
-
+nvim_lsp.cssls.setup({})
 nvim_lsp.lua_ls.setup({
 	on_attach = on_attach,
 	settings = {
@@ -34,11 +39,13 @@ nvim_lsp.lua_ls.setup({
 				globals = { "vim" },
 			},
 			workspace = {
+				checkThirdParty = false,
 				library = vim.api.nvim_get_runtime_file("", true),
 			},
 		},
 	},
 })
+
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
