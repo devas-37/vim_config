@@ -15,7 +15,7 @@ local fb_actions = require("telescope").extensions.file_browser.actions
 
 browser.setup({
 	defaults = {
-		initial_mode = "normal",
+		initial_mode = "insert",
 		preview = false,
 		file_ignore_patters = {},
 		prompt_prefix = "   ",
@@ -27,7 +27,6 @@ browser.setup({
 		layout_config = {
 			height = 0.5,
 			width = 0.5,
-			mirror = true,
 			prompt_position = "top",
 		},
 		pickers = {
@@ -81,8 +80,16 @@ vim.keymap.set("n", "<leader>e", function()
 	})
 end)
 
-vim.keymap.set("n", "<Leader>r", function()
-	biltin.live_grep()
+vim.keymap.set("n", "<Leader>ri", function()
+	biltin.live_grep({
+		preview = true,
+		theme = "default",
+		layout_config = {
+			height = 0.8,
+			width = 0.8,
+			prompt_position = "top",
+		},
+	})
 end)
 --
 vim.api.nvim_set_hl(0, "TelescopeTitle", { bg = "#2d8bd2", fg = "#002b36" })

@@ -1,6 +1,6 @@
 local opt = vim.opt
 vim.cmd("autocmd!")
-vim.colorschema = "neosolarizeda"
+vim.colorschema = "neosolarized"
 
 vim.scriptencoding = "utf-8"
 

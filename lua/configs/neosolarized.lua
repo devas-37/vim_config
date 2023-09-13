@@ -3,7 +3,6 @@ if not status then
 	print("Theme is not loaded")
 	return
 end
-
 n.setup({
 	comment_italics = true,
 })

@@ -29,3 +29,5 @@ vim.keymap.set("", "<C-l>", "<C-w>l")
 vim.keymap.set("", "q:", "<nop>")
 vim.keymap.set("n", "<Esc>", "<Cmd>nohl<Return>")
 vim.keymap.set("", "<C-i>", "<C-^>")
+
+vim.keymap.set("", "q", "<nop>")

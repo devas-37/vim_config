@@ -1,0 +1,15 @@
+local status, tree = pcall(require, "nvim-tree")
+if not status then
+	return
+end
+
+tree.setup({
+	filters = {
+		dotfiles = true,
+	},
+	renderer = {
+		icons = {
+			git_placement = "after",
+		},
+	},
+})

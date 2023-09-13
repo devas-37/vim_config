@@ -9,7 +9,10 @@ vim.cmd([[packadd packer.nvim]])
 
 packer.startup(function(use)
 	use("wbthomason/packer.nvim")
+	-- Colorschema
+	use("oxfist/night-owl.nvim")
 	use("svrana/neosolarized.nvim")
+
 	use("nvim-lualine/lualine.nvim")
 	use("neovim/nvim-lspconfig")
 	use({
@@ -18,6 +21,8 @@ packer.startup(function(use)
 	use("tjdevries/colorbuddy.nvim")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
+	-- Nvim Tree
+	use("nvim-tree/nvim-tree.lua")
 
 	--Autocompletion
 	use("onsails/lspkind-nvim")
@@ -68,6 +73,16 @@ packer.startup(function(use)
 		config = function()
 			require("gitsigns").setup({})
 		end,
+	})
+	use({
+		"dinhhuy258/git.nvim",
+	})
+	--Lazygit
+	use({
+		"kdheepak/lazygit.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
 	})
 	use({
 		"mfussenegger/nvim-lint",

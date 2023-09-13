@@ -24,13 +24,15 @@ nvim_lsp.tsserver.setup({
 	on_attach = on_attach,
 	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
 	cmd = { "typescript-language-server", "--stdio" },
-	-- init_options = {
-	-- 	preferences = {
-	-- 		disableSuggestions = true,
-	-- 	},
-	-- },
+	init_options = {
+		preferences = {
+			disableSuggestions = true,
+		},
+	},
 })
+
 nvim_lsp.cssls.setup({})
+
 nvim_lsp.lua_ls.setup({
 	on_attach = on_attach,
 	settings = {
