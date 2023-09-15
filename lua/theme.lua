@@ -31,6 +31,9 @@ M.base_30 = {
 	lightbg = "#1a2f40",
 	pmenu_bg = "#82aaff",
 	folder_bg = "#82aaff",
+	rolling_stone = "#657b83",
+	lochmara = "#3eb2ff",
+	spring_green = "#20fb6b",
 }
 
 M.base_16 = {

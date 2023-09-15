@@ -30,6 +30,9 @@ packer.startup(function(use)
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
 		},
+		config = function()
+			print("Neo Tree ready")
+		end,
 	})
 
 	--Autocompletion

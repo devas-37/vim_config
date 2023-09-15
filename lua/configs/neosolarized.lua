@@ -6,6 +6,7 @@ end
 n.setup({
 	comment_italics = true,
 })
+
 local cb = require("colorbuddy.init")
 local Color = cb.Color
 local colors = cb.colors
