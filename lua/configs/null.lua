@@ -4,19 +4,19 @@ local h = require("null-ls.helpers")
 local u = require("null-ls.utils")
 local opts = {
 	sources = {
-		null_ls.builtins.diagnostics.eslint_d.with({
-			only_local = "node_modules/.bin",
-			-- cwd = h.cache.by_bufnr(function(params)
-			-- 	return u.root_pattern(
-			-- 		".eslintrc",
-			-- 		".eslintrc.js",
-			-- 		".eslintrc.cjs",
-			-- 		".eslintrc.yaml",
-			-- 		".eslintrc.yml",
-			-- 		".eslintrc.json"
-			-- 	)(params.bufname)
-			-- end),
-		}),
+		-- null_ls.builtins.diagnostics.eslint.with({
+		-- 	prefer_local = "node_modules/.bin",
+		-- 	-- cwd = h.cache.by_bufnr(function(params)
+		-- 	-- 	return u.root_pattern(
+		-- 	-- 		".eslintrc",
+		-- 	-- 		".eslintrc.js",
+		-- 	-- 		".eslintrc.cjs",
+		-- 	-- 		".eslintrc.yaml",
+		-- 	-- 		".eslintrc.yml",
+		-- 	-- 		".eslintrc.json"
+		-- 	-- 	)(params.bufname)
+		-- 	-- end),
+		-- }),
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.formatting.prettierd,
 	},

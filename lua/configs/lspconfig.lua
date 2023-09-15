@@ -18,7 +18,6 @@ local on_attach = function(client, bufnr)
 		})
 	end
 end
-
 --TypeScript
 nvim_lsp.tsserver.setup({
 	on_attach = on_attach,
@@ -30,7 +29,18 @@ nvim_lsp.tsserver.setup({
 		},
 	},
 })
-
+nvim_lsp.eslint.setup({
+	settings = {
+		packageManager = "yarn",
+	},
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			buffer = bufnr,
+			command = "EslintFixAll",
+		})
+	end,
+})
 nvim_lsp.cssls.setup({})
 
 nvim_lsp.lua_ls.setup({

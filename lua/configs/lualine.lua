@@ -9,7 +9,8 @@ lualine.setup({
 		theme = "solarized_dark",
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
-		ignore_focus = { "TelescopePrompt", "terminal" },
+		ignore_focus = { "TelescopePrompt", "terminal", "NVimTree" },
+		disabled_filetypes = { "NVimTree" },
 	},
 	sections = {
 		lualine_a = { "mode" },

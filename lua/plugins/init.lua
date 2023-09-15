@@ -21,8 +21,16 @@ packer.startup(function(use)
 	use("tjdevries/colorbuddy.nvim")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
-	-- Nvim Tree
-	use("nvim-tree/nvim-tree.lua")
+	-- neo Tree
+	use({
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+		},
+	})
 
 	--Autocompletion
 	use("onsails/lspkind-nvim")
