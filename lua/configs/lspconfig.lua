@@ -6,7 +6,6 @@ end
 local protocol = require("vim.lsp.protocol")
 local signs = { Error = "󰅚 ", Warning = " ", Hint = " ", Information = " " }
 local on_attach = function(client, bufnr)
-	--format on save
 	if client.server_capabilities.documentFormattingProvider then
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = true }),
@@ -34,7 +33,6 @@ nvim_lsp.eslint.setup({
 		packageManager = "yarn",
 	},
 	on_attach = function(client, bufnr)
-		on_attach(client, bufnr)
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			buffer = bufnr,
 			command = "EslintFixAll",
