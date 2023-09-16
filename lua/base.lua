@@ -39,9 +39,9 @@ opt.cmdheight = 0
 opt.mouse = "a"
 opt.smartcase = true
 opt.updatetime = 250
-vim.api.nvim_create_autocmd("InsertLeave", {
-	pattern = "*",
-	command = "set nopaste",
-})
 vim.g.transparency = false
 opt.clipboard:append({ "unnamedplus" }) -- For ubuntu require xclip for X11, for Wayland wl-copy, wl-paste
+
+vim.keymap.set("n", "<leader>git", function()
+	vim.cmd("LazyGit")
+end)

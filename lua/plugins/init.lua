@@ -30,9 +30,6 @@ packer.startup(function(use)
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
 		},
-		config = function()
-			print("Neo Tree ready")
-		end,
 	})
 
 	--Autocompletion
@@ -44,8 +41,6 @@ packer.startup(function(use)
 
 	-- Treesitter
 	use("nvim-treesitter/nvim-treesitter")
-
-	use("simrat39/rust-tools.nvim")
 
 	-- Autotag and autopair
 	use("windwp/nvim-autopairs")
@@ -94,14 +89,12 @@ packer.startup(function(use)
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
-		config = function()
-			vim.api.create_user_command("git", function()
-				vim.cmd("Lazygit")
-			end)
-		end,
 	})
 	use({
 		"mfussenegger/nvim-lint",
 	})
 	use("NvChad/nvterm")
+
+	--- Rust
+	use("simrat39/rust-tools.nvim")
 end)
