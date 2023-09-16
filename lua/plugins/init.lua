@@ -63,7 +63,7 @@ packer.startup(function(use)
 	-- Formatter
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("MunifTanjim/prettier.nvim")
-
+	use({ "folke/noice.nvim", requires = { "MunifTanjim/nui.nvim" } })
 	--Linter
 	use("MunifTanjim/eslint.nvim")
 	use({
@@ -89,9 +89,6 @@ packer.startup(function(use)
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
-	})
-	use({
-		"mfussenegger/nvim-lint",
 	})
 	use("NvChad/nvterm")
 

@@ -3,6 +3,7 @@ if not status then
 	return
 end
 tree.setup({
+
 	filesystem = {
 		filtered_items = {
 			visible = true,
