@@ -66,20 +66,19 @@ vim.keymap.set("n", "<C-p>", function()
 	biltin.find_files({})
 end)
 
--- vim.keymap.set("n", "<leader>e", function()
--- 	browser.extensions.file_browser.file_browser({
--- 		path = "%:p:h",
--- 		cwd = telescope_buffer_dir(),
--- 		respect_gitignore = false,
--- 		grouped = true,
--- 		hidden = true,
--- 		previewer = false,
--- 		initial_mode = "normal",
--- 		theme = "dropdown",
--- 		hijack_netrw = false,
--- 	})
--- end)
---
+vim.keymap.set("n", "<leader>f", function()
+	browser.extensions.file_browser.file_browser({
+		path = "%:p:h",
+		cwd = telescope_buffer_dir(),
+		respect_gitignore = false,
+		grouped = true,
+		hidden = true,
+		previewer = false,
+		initial_mode = "normal",
+		theme = "dropdown",
+		hijack_netrw = false,
+	})
+end)
 vim.keymap.set("n", "<Leader>ri", function()
 	biltin.live_grep({
 		preview = true,
@@ -91,7 +90,6 @@ vim.keymap.set("n", "<Leader>ri", function()
 		},
 	})
 end)
---
 vim.api.nvim_set_hl(0, "TelescopeTitle", { bg = "#2d8bd2", fg = "#002b36" })
 vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = colors.darker_black, fg = colors.darker_black })
 vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = colors.black2, fg = colors.black2 })

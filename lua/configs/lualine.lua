@@ -7,13 +7,15 @@ lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "solarized_dark",
-		section_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
-		ignore_focus = { "TelescopePrompt", "terminal", "NVimTree" },
-		disabled_filetypes = { "NVimTree" },
+		ignore_focus = { "TelescopePrompt", "terminal", "Neotree", "neo-tree" },
+		disabled_filetypes = {},
 	},
 	sections = {
-		lualine_a = { "mode" },
+		lualine_a = {
+			"mode",
+		},
 		lualine_b = { "branch" },
 		lualine_c = {
 			{

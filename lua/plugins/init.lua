@@ -94,6 +94,11 @@ packer.startup(function(use)
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
+		config = function()
+			vim.api.create_user_command("git", function()
+				vim.cmd("Lazygit")
+			end)
+		end,
 	})
 	use({
 		"mfussenegger/nvim-lint",
