@@ -15,7 +15,8 @@ noice.setup({
 	},
 	cmdline = {
 		format = {
-			cmdline = { pattern = "^:", icon = "", lang = "vim" },
+			cmdline = { pattern = "^:", icon = "", lang = "vim" },
+			filter = { pattern = "^:%s*!", icon = "", lang = "bash" },
 		},
 	},
 	presets = {
@@ -29,6 +30,5 @@ noice.setup({
 
 vim.api.nvim_set_hl(0, "NoiceMini", { bg = colors.black, fg = colors.white })
 vim.api.nvim_set_hl(0, "NoiceScrollbar", { bg = colors.pink, fg = colors.white })
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopupTitle", { fg = colors.nord_blue })
 vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { fg = colors.darker_black })
 vim.api.nvim_set_hl(0, "NoiceCmdlinePopup", { bg = colors.darker_black, fg = colors.white })

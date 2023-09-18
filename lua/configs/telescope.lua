@@ -66,7 +66,7 @@ vim.keymap.set("n", "<C-p>", function()
 	biltin.find_files({})
 end)
 
-vim.keymap.set("n", "<leader>f", function()
+vim.keymap.set("n", "<leader>e", function()
 	browser.extensions.file_browser.file_browser({
 		path = "%:p:h",
 		cwd = telescope_buffer_dir(),

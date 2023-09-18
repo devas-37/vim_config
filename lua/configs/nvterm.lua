@@ -1,4 +1,20 @@
-require("nvterm").setup({})
+require("nvterm").setup({
+	terminals = {
+		type_opts = {
+			float = {
+				relative = "editor",
+				col = 0.1,
+				row = 0.2,
+				width = 0.8,
+				height = 0.6,
+			},
+			horizontal = {
+				location = "rightbelow",
+				split_ratio = 0.2,
+			},
+		},
+	},
+})
 
 vim.keymap.set({ "n", "t" }, "<A-i>", function()
 	require("nvterm.terminal").toggle("float")

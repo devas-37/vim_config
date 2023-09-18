@@ -2,15 +2,14 @@ local status, lualine = pcall(require, "lualine")
 if not status then
 	return
 end
-
 lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "solarized_dark",
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
-		ignore_focus = { "TelescopePrompt", "Neotree", "neo-tree" },
-		disabled_filetypes = {},
+		ignore_focus = { "TelescopePrompt" },
+		disabled_filetypes = { "TelescopePrompt" },
 	},
 	sections = {
 		lualine_a = {
