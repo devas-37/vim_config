@@ -6,16 +6,31 @@ lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "solarized_dark",
-		section_separators = { left = "", right = "" },
-		component_separators = { left = "", right = "" },
+		-- section_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
+		component_separators = { left = "", right = "" },
 		ignore_focus = { "TelescopePrompt" },
 		disabled_filetypes = { "TelescopePrompt" },
+		fmt = string.lower,
 	},
 	sections = {
 		lualine_a = {
-			"mode",
+			{
+				"mode",
+				fmt = function(mode)
+					return " " .. mode
+				end,
+			},
 		},
-		lualine_b = { "branch" },
+		lualine_b = {
+			{
+				"branch",
+				fmt = function(str)
+					return " " .. str
+				end,
+				icons_enabled = false,
+			},
+		},
 		lualine_c = {
 			{
 				"filename",
@@ -37,7 +52,12 @@ lualine.setup({
 			"encoding",
 			"filetype",
 		},
-		lualine_y = { "progress" },
+		lualine_y = { {
+			"progress",
+			fmt = function()
+				return " Ubuntu"
+			end,
+		} },
 		lualine_z = { "location" },
 	},
 	inactive_sections = {
