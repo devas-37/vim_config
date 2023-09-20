@@ -11,7 +11,6 @@ lualine.setup({
 		component_separators = { left = "", right = "" },
 		ignore_focus = { "TelescopePrompt" },
 		disabled_filetypes = { "TelescopePrompt" },
-		fmt = string.lower,
 	},
 	sections = {
 		lualine_a = {

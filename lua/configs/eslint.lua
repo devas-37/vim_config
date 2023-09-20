@@ -1,9 +1,9 @@
 local eslint = require("eslint")
 
 eslint.setup({
-	bin = "eslint",
+	bin = "eslint_d",
 	code_actions = {
-		enable = true,
+		enable = false,
 		apply_on_save = {
 			enable = true,
 			types = { "directive", "problem", "suggestion", "layout" },

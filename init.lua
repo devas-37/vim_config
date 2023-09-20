@@ -2,7 +2,9 @@ require("base")
 require("maps")
 require("plugins")
 require("configs.lualine")
+
 require("configs.lspconfig")
+
 require("configs.lspsaga")
 require("configs.neosolarized")
 require("configs.mason")
@@ -20,6 +22,8 @@ require("configs.colorizer")
 require("configs.comment")
 require("configs.nvterm")
 require("configs.git")
+
 --require("configs.lint")
 --require("configs.neo-tree")
 require("configs.noice")
+-- require("configs.eslint")

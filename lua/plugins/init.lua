@@ -94,4 +94,20 @@ packer.startup(function(use)
 
 	--- Rust
 	use("simrat39/rust-tools.nvim")
+
+	--- Session
+	use({
+		"rmagatti/auto-session",
+
+		config = function()
+			require("auto-session").setup({
+				log_level = "error",
+			})
+		end,
+	})
+
+	--- Git tools
+	use({
+		"tpope/vim-fugitive",
+	})
 end)
