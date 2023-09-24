@@ -45,3 +45,8 @@ opt.clipboard:append({ "unnamedplus" }) -- For ubuntu require xclip for X11, for
 vim.keymap.set("n", "<leader>git", function()
 	vim.cmd("LazyGit")
 end)
+
+-- vim.keymap.set("n", "<C-d>", function()
+-- 	local result = vim.treesitter.get_captures_at_cursor(0)
+-- 	print(vim.inspect(result))
+-- end, { noremap = true, silent = false })

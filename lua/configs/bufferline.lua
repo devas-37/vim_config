@@ -12,8 +12,155 @@ bufferline.setup({
 		show_close_icon = false,
 		max_prefix_length = 0,
 		color_icons = true,
+		diagnostics = "nvim_lsp",
+		diagnostics_indicator = function(count, level)
+			local icon = level:match("error") and " " or " "
+			return " " .. icon .. count
+		end,
 	},
 	highlights = {
+
+		diagnostic = {
+			italic = false,
+			bold = false,
+		},
+		-- diagnostic_visible = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		-- },
+		-- diagnostic_selected = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		--   bold = true,
+		--   italic = true,
+		-- },
+		-- hint = {
+		--   fg = "<colour-value-here>",
+		--   sp = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		-- },
+		-- hint_visible = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		-- },
+		-- hint_selected = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		--   sp = "<colour-value-here>",
+		--   bold = true,
+		--   italic = true,
+		-- },
+		-- hint_diagnostic = {
+		--   fg = "<colour-value-here>",
+		--   sp = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		-- },
+		-- hint_diagnostic_visible = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		-- },
+		-- hint_diagnostic_selected = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		--   sp = "<colour-value-here>",
+		--   bold = true,
+		--   italic = true,
+		-- },
+		-- info = {
+		--   fg = "<colour-value-here>",
+		--   sp = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		-- },
+		-- info_visible = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		-- },
+		-- info_selected = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		--   sp = "<colour-value-here>",
+		--   bold = true,
+		--   italic = true,
+		-- },
+		-- info_diagnostic = {
+		--   fg = "<colour-value-here>",
+		--   sp = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		-- },
+		-- info_diagnostic_visible = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		-- },
+		-- info_diagnostic_selected = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		--   sp = "<colour-value-here>",
+		--   bold = true,
+		--   italic = true,
+		-- },
+		warning = {
+			bg = nil,
+			bold = false,
+			italic = false,
+		},
+		warning_visible = {
+			fg = "red",
+			bold = false,
+			italic = false,
+		},
+		warning_selected = {
+			-- fg = "<colour-value-here>",
+			-- bg = "<colour-value-here>",
+			-- sp = "<colour-value-here>",
+		},
+		-- warning_diagnostic = {
+		--   fg = "<colour-value-here>",
+		--   sp = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		-- },
+		-- warning_diagnostic_visible = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		-- },
+		warning_diagnostic_selected = {
+			-- fg = "<colour-value-here>",
+			-- bg = "<colour-value-here>",
+			-- sp = "<colour-value-here>",
+			bold = false,
+			italic = false,
+		},
+		-- error = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		--   sp = "<colour-value-here>",
+		-- },
+		-- error_visible = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		-- },
+		-- error_selected = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		--   sp = "<colour-value-here>",
+		--   bold = true,
+		--   italic = true,
+		-- },
+		-- error_diagnostic = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		--   sp = "<colour-value-here>",
+		-- },
+		-- error_diagnostic_visible = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		-- },
+		-- error_diagnostic_selected = {
+		--   fg = "<colour-value-here>",
+		--   bg = "<colour-value-here>",
+		--   sp = "<colour-value-here>",
+		--   bold = true,
+		--   italic = true,
+		-- },
 		separator = {
 			fg = "#073642",
 			bg = "#002b36",

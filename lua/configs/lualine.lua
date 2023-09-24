@@ -9,8 +9,8 @@ lualine.setup({
 		-- section_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
-		ignore_focus = { "TelescopePrompt" },
-		disabled_filetypes = { "TelescopePrompt" },
+		ignore_focus = { "TelescopePrompt", "neo-tree" },
+		disabled_filetypes = { "TelescopePrompt", "neo-tree" },
 	},
 	sections = {
 		lualine_a = {

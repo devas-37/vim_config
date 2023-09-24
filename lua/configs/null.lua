@@ -1,10 +1,27 @@
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local null_ls = require("null-ls")
+local utils = require("null-ls.utils")
+local helpers = require("null-ls.helpers")
 local opts = {
 	sources = {
 		null_ls.builtins.diagnostics.eslint_d,
 		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.formatting.prettierd,
+		null_ls.builtins.formatting.prettierd.with({
+			file_types = {
+				"javascript",
+				"typescript",
+				"css",
+				"scss",
+				"html",
+				"json",
+				"yaml",
+				"markdown",
+				"graphql",
+				"md",
+				"txt",
+				"cjs",
+			},
+		}),
 	},
 }
 

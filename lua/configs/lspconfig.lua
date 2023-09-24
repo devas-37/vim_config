@@ -20,7 +20,7 @@ end
 --TypeScript
 nvim_lsp.tsserver.setup({
 	on_attach = on_attach,
-	filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascriptreact", "javascript.jsx" },
+	filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
 	cmd = { "typescript-language-server", "--stdio" },
 	init_options = {
 		preferences = {
@@ -28,17 +28,7 @@ nvim_lsp.tsserver.setup({
 		},
 	},
 })
--- nvim_lsp.eslint.setup({
--- 	settings = {
--- 		packageManager = "yarn",
--- 	},
--- 	on_attach = function(client, bufnr)
--- 		vim.api.nvim_create_autocmd("BufWritePre", {
--- 			buffer = bufnr,
--- 			command = "EslintFixAll",
--- 		})
--- 	end,
--- })
+
 nvim_lsp.cssls.setup({})
 
 nvim_lsp.lua_ls.setup({

@@ -17,16 +17,15 @@ browser.setup({
 	defaults = {
 		initial_mode = "insert",
 		preview = false,
-		file_ignore_patters = {},
 		prompt_prefix = "   ",
 		selection_caret = "  ",
 		entry_prefix = "  ",
-		hijack_netrw = false,
+		hijack_netrw = true,
 		selection_strategy = "row",
 		sorting_strategy = "ascending",
 		layout_config = {
-			height = 0.5,
-			width = 0.5,
+			height = 0.7,
+			width = 0.9,
 			prompt_position = "top",
 		},
 		pickers = {
@@ -42,7 +41,7 @@ browser.setup({
 	},
 	extensions = {
 		file_browser = {
-			hijack_netrw = false,
+			hijack_netrw = true,
 			mappings = {
 				["i"] = {
 					["<C-w>"] = function()
@@ -63,20 +62,25 @@ browser.setup({
 })
 
 vim.keymap.set("n", "<C-p>", function()
-	biltin.find_files({})
+	biltin.find_files()
 end)
 
 vim.keymap.set("n", "<leader>e", function()
 	browser.extensions.file_browser.file_browser({
 		path = "%:p:h",
 		cwd = telescope_buffer_dir(),
-		respect_gitignore = false,
+		respect_gitignore = true,
 		grouped = true,
 		hidden = true,
-		previewer = false,
+		preview = false,
 		initial_mode = "normal",
 		theme = "dropdown",
-		hijack_netrw = false,
+		hijack_netrw = true,
+		layout_config = {
+			height = 0.5,
+			width = 0.5,
+			prompt_position = "top",
+		},
 	})
 end)
 vim.keymap.set("n", "<Leader>ri", function()
@@ -85,7 +89,7 @@ vim.keymap.set("n", "<Leader>ri", function()
 		theme = "default",
 		layout_config = {
 			height = 0.8,
-			width = 0.8,
+			width = 0.9,
 			prompt_position = "top",
 		},
 	})

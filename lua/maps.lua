@@ -23,7 +23,10 @@ vim.keymap.set("n", "tn", ":tabedit<Return>", opt)
 -- Split window
 vim.keymap.set("n", "ss", ":split<Return><C-w>w", opt)
 vim.keymap.set("n", "sv", ":vsplit<Return><C-w>w", opt)
-
+--Disable jump
+-- vim.keymap.set({ "n", "i" }, "<C-o>", "<nop>")
+-- vim.keymap.set({ "n", "i" }, "<C-^>", "<nop>")
+-- vim.keymap.set({ "n", "i" }, "<C-i>", "<nop>")
 -- Move window
 vim.keymap.set("n", "<Space>", "<C-w>w", opt)
 vim.keymap.set("", "<C-h>", "<C-w>h", opt)

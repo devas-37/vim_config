@@ -7,7 +7,7 @@ git.setup({
 	default_mappings = true,
 	keymaps = {
 		blame = "<leader>gb",
-		quit_blame = "q",
+		quit_blame = "<Esc>",
 	},
 	winbar = false,
 })
