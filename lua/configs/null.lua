@@ -1,4 +1,5 @@
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
 local null_ls = require("null-ls")
 local utils = require("null-ls.utils")
 local helpers = require("null-ls.helpers")
@@ -13,8 +14,8 @@ local opts = {
 				"css",
 				"scss",
 				"html",
-				"json",
 				"yaml",
+				"json",
 				"markdown",
 				"graphql",
 				"md",

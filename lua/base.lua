@@ -1,4 +1,5 @@
 local opt = vim.opt
+local colors = require("theme").base_30
 vim.cmd("autocmd!")
 vim.colorschema = "neosolarized"
 
@@ -50,3 +51,11 @@ end)
 -- 	local result = vim.treesitter.get_captures_at_cursor(0)
 -- 	print(vim.inspect(result))
 -- end, { noremap = true, silent = false })
+vim.api.nvim_create_user_command("Format", function()
+	vim.lsp.buf.format()
+end, {})
+
+vim.g.lazygit_floating_window_border_chars = ""
+vim.g.lazygit_floating_window_winblend = 2
+vim.api.nvim_set_hl(0, "LazyGitBorder", { fg = colors.darker_black, bg = colors.darker_black })
+vim.api.nvim_set_hl(0, "LazyGitFloat", { bg = colors.darker_black })

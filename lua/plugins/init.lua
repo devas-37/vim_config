@@ -98,7 +98,6 @@ packer.startup(function(use)
 	--- Session
 	use({
 		"rmagatti/auto-session",
-
 		config = function()
 			require("auto-session").setup({
 				log_level = "error",
