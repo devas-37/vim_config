@@ -6,9 +6,4 @@ color.setup({
 	"css",
 	"sass",
 	"scss",
-	"typescript",
-	"typescriptreact",
-	"javascript",
-	"javascriptreact",
-	"lua",
 }, { mode = "background" })

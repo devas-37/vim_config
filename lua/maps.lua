@@ -6,7 +6,7 @@ vim.keymap.set("n", "+", "<C-a>")
 vim.keymap.set("n", "-", "<C-x>")
 
 --save
-vim.keymap.set("n", "<C-s>", "<cmd> w <CR>")
+-- vim.keymap.set("n", "<C-s>", "<cmd> w <CR>")
 
 -- Delete a word backwards
 vim.keymap.set("n", "dw", 'vb"_')

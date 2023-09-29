@@ -1,14 +1,15 @@
 local opt = vim.opt
 local colors = require("theme").base_30
 vim.cmd("autocmd!")
+
 vim.colorschema = "neosolarized"
 
 vim.scriptencoding = "utf-8"
 
 vim.wo.number = true
-vim.opt.encoding = "utf-8"
-vim.opt.fileencoding = "utf-8"
-opt.scrolloff = 100
+opt.encoding = "utf-8"
+opt.autoread = true
+opt.fileencoding = "utf-8"
 opt.number = true
 opt.background = "dark"
 opt.smartindent = true
@@ -17,13 +18,13 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.backup = false
-opt.showcmd = true
---opt.shell = "fish"
+opt.showcmd = false
+opt.showmode = false
+opt.shell = "zsh"
 opt.title = true
 opt.hlsearch = true
 opt.autoindent = true
-opt.backupskip = "/.local/*"
-opt.cmdheight = 1
+-- opt.backupskip = "/.local/*"
 opt.signcolumn = "yes"
 opt.cursorline = true
 opt.termguicolors = true
@@ -43,6 +44,7 @@ opt.updatetime = 250
 vim.g.transparency = false
 opt.clipboard:append({ "unnamedplus" }) -- For ubuntu require xclip for X11, for Wayland wl-copy, wl-paste
 
+opt.sessionoptions = "buffers,curdir,tabpages,winsize,folds"
 vim.keymap.set("n", "<leader>git", function()
 	vim.cmd("LazyGit")
 end)
@@ -51,11 +53,23 @@ end)
 -- 	local result = vim.treesitter.get_captures_at_cursor(0)
 -- 	print(vim.inspect(result))
 -- end, { noremap = true, silent = false })
+
 vim.api.nvim_create_user_command("Format", function()
 	vim.lsp.buf.format()
 end, {})
 
-vim.g.lazygit_floating_window_border_chars = ""
+vim.api.nvim_create_user_command("Load", function()
+	vim.cmd("luafile %")
+end, {})
+
+vim.api.nvim_create_user_command("RestartLint", function()
+	vim.fn.jobstart("eslint_d restart", {
+		on_exit = function()
+			print("Restart eslint_d success!")
+		end,
+	})
+end, {})
+
 vim.g.lazygit_floating_window_winblend = 2
-vim.api.nvim_set_hl(0, "LazyGitBorder", { fg = colors.darker_black, bg = colors.darker_black })
+vim.api.nvim_set_hl(0, "LazyGitBorder", { fg = colors.lochmara, bg = colors.darker_black })
 vim.api.nvim_set_hl(0, "LazyGitFloat", { bg = colors.darker_black })

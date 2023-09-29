@@ -104,9 +104,4 @@ packer.startup(function(use)
 			})
 		end,
 	})
-
-	--- Git tools
-	use({
-		"tpope/vim-fugitive",
-	})
 end)
