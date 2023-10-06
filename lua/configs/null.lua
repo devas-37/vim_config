@@ -7,6 +7,7 @@ local opts = {
 	sources = {
 		null_ls.builtins.diagnostics.eslint_d,
 		null_ls.builtins.formatting.stylua,
+		null_ls.builtins.formatting.rustfmt,
 		null_ls.builtins.formatting.prettierd.with({
 			file_types = {
 				"javascript",

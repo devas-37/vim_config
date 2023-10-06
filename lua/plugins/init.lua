@@ -83,13 +83,26 @@ packer.startup(function(use)
 	use({
 		"dinhhuy258/git.nvim",
 	})
-	--Lazygit
+	--Git
 	use({
 		"kdheepak/lazygit.nvim",
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
 	})
+	use({
+		"NeogitOrg/neogit",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"sindrets/diffview.nvim",
+			"ibhagwan/fzf-lua",
+		},
+	})
+	use({
+		"f-person/git-blame.nvim",
+	})
+	--Terminal
 	use("NvChad/nvterm")
 
 	--- Rust
@@ -102,6 +115,23 @@ packer.startup(function(use)
 			require("auto-session").setup({
 				log_level = "error",
 			})
+		end,
+	})
+	--- Trouble
+	use({
+		"folke/trouble.nvim",
+		requires = {
+			"nvim-tree/nvim-web-devicons",
+		},
+	})
+	---MySql client
+	use({
+		"kndndrj/nvim-dbee",
+		required = {
+			"MunifTanjim/nui.nvim",
+		},
+		run = function()
+			require("dbee").install()
 		end,
 	})
 end)

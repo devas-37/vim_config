@@ -29,7 +29,7 @@ noice.setup({
 		{
 			filter = {
 				event = "msg_show",
-				find = "packer",
+				kind = "written",
 			},
 			opts = { skip = true },
 		},

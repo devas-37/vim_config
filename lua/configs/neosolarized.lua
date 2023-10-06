@@ -17,6 +17,7 @@ local styles = cb.styles
 Color.new("black", "#000000")
 Color.new("background", "#011627")
 Group.new("CursorLine", colors.none, colors.base03, styles.NONE, colors.base1)
+Group.new("BlameLineVirtualtext", colors.none, colors.base03, styles.NONE, colors.base1)
 Group.new("CursorLineNr", colors.yellow, colors.black, styles.NONE, colors.base1)
 Group.new("Visual", colors.none, colors.base03, styles.reverse)
 

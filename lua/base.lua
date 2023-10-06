@@ -7,6 +7,7 @@ vim.colorschema = "neosolarized"
 vim.scriptencoding = "utf-8"
 
 vim.wo.number = true
+vim.wo.signcolumn = "yes"
 opt.encoding = "utf-8"
 opt.autoread = true
 opt.fileencoding = "utf-8"
@@ -40,7 +41,8 @@ opt.clipboard = "unnamed"
 opt.cmdheight = 0
 opt.mouse = "a"
 opt.smartcase = true
-opt.updatetime = 250
+opt.incsearch = false
+opt.updatetime = 300
 vim.g.transparency = false
 opt.clipboard:append({ "unnamedplus" }) -- For ubuntu require xclip for X11, for Wayland wl-copy, wl-paste
 
@@ -73,3 +75,13 @@ end, {})
 vim.g.lazygit_floating_window_winblend = 2
 vim.api.nvim_set_hl(0, "LazyGitBorder", { fg = colors.lochmara, bg = colors.darker_black })
 vim.api.nvim_set_hl(0, "LazyGitFloat", { bg = colors.darker_black })
+
+-- Highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank({
+			timeout = 250,
+			higroup = "visual",
+		})
+	end,
+})
