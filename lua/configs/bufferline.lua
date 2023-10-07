@@ -17,6 +17,13 @@ bufferline.setup({
 			local icon = level:match("error") and " " or " "
 			return " " .. icon .. count
 		end,
+	offsets = {
+		{
+			filetype = "neo-tree",
+			text = "Neo-tree",
+			text_align = "left",
+		},
+	},
 	},
 	highlights = {
 

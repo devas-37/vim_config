@@ -52,6 +52,7 @@ vim.keymap.set("n", "<leader>git", function()
 	vim.cmd("LazyGit")
 end)
 
+vim.keymap.set("n", "<Tab>", "<nop>")
 -- vim.keymap.set("n", "<C-d>", function()
 -- 	local result = vim.treesitter.get_captures_at_cursor(0)
 -- 	print(vim.inspect(result))
@@ -85,4 +86,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 			higroup = "visual",
 		})
 	end,
+
 })

@@ -28,13 +28,6 @@ noice.setup({
 	routes = {
 		{
 			filter = {
-				event = "msg_show",
-				find = "written",
-			},
-			opts = { skip = true },
-		},
-		{
-			filter = {
 				event = "lsp",
 			},
 			opts = { skip = true },
