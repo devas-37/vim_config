@@ -44,6 +44,7 @@ opt.smartcase = true
 opt.incsearch = false
 opt.updatetime = 300
 vim.g.transparency = false
+vim.g.syntastic_auto_jump = 0
 opt.clipboard:append({ "unnamedplus" }) -- For ubuntu require xclip for X11, for Wayland wl-copy, wl-paste
 
 opt.sessionoptions = "buffers,curdir,tabpages,winsize,folds"

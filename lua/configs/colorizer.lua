@@ -6,4 +6,5 @@ color.setup({
 	"css",
 	"sass",
 	"scss",
+	"lua",
 }, { mode = "background" })

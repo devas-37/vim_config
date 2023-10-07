@@ -134,4 +134,9 @@ packer.startup(function(use)
 			require("dbee").install()
 		end,
 	})
+
+	-- indent blankline
+	use({
+		"lukas-reineke/indent-blankline.nvim",
+	})
 end)

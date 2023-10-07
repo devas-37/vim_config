@@ -1,23 +1,25 @@
 local cmp = require("cmp")
+
 local cmp_ui = {
 	icons = true,
 	lspkind_text = true,
-	style = "default", -- default/flat_light/flat_dark/atom/atom_colored
-	border_color = "grey_fg", -- only applicable for "default" style, use color names from base30 variables
-	selected_item_bg = "colored", -- colored / simple
+	style = "default",
+	border_color = "grey_fg",
+	selected_item_bg = "colored",
 }
+
 local cmp_style = cmp_ui["style"]
 local field_arrangement = {
 	atom = { "kind", "abbr", "menu" },
 	default = { "kind", "abbr", "menu" },
 }
 local formatting_style = {
+
 	fields = field_arrangement[cmp_style] or { "abbr", "kind", "menu" },
 
 	format = function(_, item)
 		local icons = require("icons")
 		local icon = (cmp_ui.icons and icons[item.kind]) or ""
-
 		if cmp_style == "atom" or cmp_style == "atom_colored" then
 			icon = " " .. icon .. " "
 			item.menu = cmp_ui.lspkind_text and "   (" .. item.kind .. ")" or ""
@@ -86,5 +88,4 @@ local options = {
 		{ name = "path" },
 	},
 }
-
 cmp.setup(options)

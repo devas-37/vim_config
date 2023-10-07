@@ -29,7 +29,7 @@ noice.setup({
 		{
 			filter = {
 				event = "msg_show",
-				kind = "written",
+				find = "written",
 			},
 			opts = { skip = true },
 		},
