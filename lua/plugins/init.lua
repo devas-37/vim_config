@@ -102,9 +102,6 @@ packer.startup(function(use)
 	use({
 		"f-person/git-blame.nvim",
 	})
-	use({
-		"tpope/vim-fugitive",
-	})
 	--Terminal
 	use("NvChad/nvterm")
 
