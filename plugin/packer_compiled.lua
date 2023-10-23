@@ -151,6 +151,11 @@ _G.packer_plugins = {
     path = "/home/devas/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
+  ["live-server.nvim"] = {
+    loaded = true,
+    path = "/home/devas/.local/share/nvim/site/pack/packer/start/live-server.nvim",
+    url = "https://github.com/aurum77/live-server.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/devas/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
@@ -295,11 +300,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/devas/.local/share/nvim/site/pack/packer/start/vim-floaterm",
     url = "https://github.com/voldikss/vim-floaterm"
-  },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/home/devas/.local/share/nvim/site/pack/packer/start/vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
   }
 }
 

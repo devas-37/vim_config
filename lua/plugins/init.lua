@@ -139,4 +139,17 @@ packer.startup(function(use)
 	use({
 		"lukas-reineke/indent-blankline.nvim",
 	})
+
+	--Liveserver
+	use({
+		"aurum77/live-server.nvim",
+		run = function()
+			require("live_server.util").install()
+		end,
+	})
+	--- Surround
+	use({
+		"kylechui/nvim-surround",
+		tag = "*",
+	})
 end)

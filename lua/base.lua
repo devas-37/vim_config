@@ -10,8 +10,8 @@ vim.wo.number = true
 vim.wo.signcolumn = "yes"
 opt.encoding = "utf-8"
 opt.autoread = true
-opt.fileencoding = "utf-8"
 opt.number = true
+opt.fileencoding = "utf-8"
 opt.background = "dark"
 opt.smartindent = true
 opt.smarttab = true
@@ -51,8 +51,6 @@ opt.sessionoptions = "buffers,curdir,tabpages,winsize,folds"
 vim.keymap.set("n", "<leader>git", function()
 	vim.cmd("LazyGit")
 end)
-
-vim.keymap.set("n", "<Tab>", "<nop>")
 -- vim.keymap.set("n", "<C-d>", function()
 -- 	local result = vim.treesitter.get_captures_at_cursor(0)
 -- 	print(vim.inspect(result))
@@ -86,5 +84,4 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 			higroup = "visual",
 		})
 	end,
-
 })

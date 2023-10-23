@@ -1,8 +1,8 @@
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local null_ls = require("null-ls")
-local utils = require("null-ls.utils")
-local helpers = require("null-ls.helpers")
+local u = require("null-ls.utils")
+local h = require("null-ls.helpers")
 local opts = {
 	sources = {
 		null_ls.builtins.diagnostics.eslint_d,
