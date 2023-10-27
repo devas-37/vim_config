@@ -8,6 +8,7 @@ local protocol = require("vim.lsp.protocol")
 local signs = { Error = "󰅚 ", Warning = " ", Hint = " ", Information = " " }
 
 local on_attach = function(client, bufnr)
+	print("Attaching")
 	if client.server_capabilities.documentFormattingProvider then
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = true }),
