@@ -65,24 +65,24 @@ vim.keymap.set("n", "<C-p>", function()
 	biltin.find_files()
 end)
 
-vim.keymap.set("n", "<leader>e", function()
-	browser.extensions.file_browser.file_browser({
-		path = "%:p:h",
-		cwd = telescope_buffer_dir(),
-		respect_gitignore = true,
-		grouped = true,
-		hidden = true,
-		preview = false,
-		initial_mode = "normal",
-		theme = "dropdown",
-		hijack_netrw = true,
-		layout_config = {
-			height = 0.5,
-			width = 0.5,
-			prompt_position = "top",
-		},
-	})
-end)
+-- vim.keymap.set("n", "<leader>e", function()
+-- 	browser.extensions.file_browser.file_browser({
+-- 		path = "%:p:h",
+-- 		cwd = telescope_buffer_dir(),
+-- 		respect_gitignore = true,
+-- 		grouped = true,
+-- 		hidden = true,
+-- 		preview = false,
+-- 		initial_mode = "normal",
+-- 		theme = "dropdown",
+-- 		hijack_netrw = true,
+-- 		layout_config = {
+-- 			height = 0.5,
+-- 			width = 0.5,
+-- 			prompt_position = "top",
+-- 		},
+-- 	})
+-- end)
 vim.keymap.set("n", "<Leader>ri", function()
 	biltin.live_grep({
 		preview = true,

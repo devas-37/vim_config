@@ -25,7 +25,7 @@ opt.shell = "zsh"
 opt.title = true
 opt.hlsearch = true
 opt.autoindent = true
--- opt.backupskip = "/.local/*"
+opt.backupskip = "/.local/*"
 opt.signcolumn = "yes"
 opt.cursorline = true
 opt.termguicolors = true
@@ -51,17 +51,9 @@ opt.sessionoptions = "buffers,curdir,tabpages,winsize,folds"
 vim.keymap.set("n", "<leader>git", function()
 	vim.cmd("LazyGit")
 end)
--- vim.keymap.set("n", "<C-d>", function()
--- 	local result = vim.treesitter.get_captures_at_cursor(0)
--- 	print(vim.inspect(result))
--- end, { noremap = true, silent = false })
 
 vim.api.nvim_create_user_command("Format", function()
 	vim.lsp.buf.format()
-end, {})
-
-vim.api.nvim_create_user_command("Load", function()
-	vim.cmd("luafile %")
 end, {})
 
 vim.api.nvim_create_user_command("RestartLint", function()
@@ -72,7 +64,6 @@ vim.api.nvim_create_user_command("RestartLint", function()
 	})
 end, {})
 
-vim.g.lazygit_floating_window_winblend = 2
 vim.api.nvim_set_hl(0, "LazyGitBorder", { fg = colors.lochmara, bg = colors.darker_black })
 vim.api.nvim_set_hl(0, "LazyGitFloat", { bg = colors.darker_black })
 

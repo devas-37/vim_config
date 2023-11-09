@@ -10,8 +10,8 @@ vim.cmd([[packadd packer.nvim]])
 packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 	-- Colorschema
-	use("oxfist/night-owl.nvim")
 	use("svrana/neosolarized.nvim")
+	use("oxfist/night-owl.nvim")
 
 	use("nvim-lualine/lualine.nvim")
 	use("neovim/nvim-lspconfig")
@@ -59,13 +59,10 @@ packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 
 	use("akinsho/bufferline.nvim")
-	use("voldikss/vim-floaterm")
 	-- Formatter
 	use("jose-elias-alvarez/null-ls.nvim")
-	use("MunifTanjim/prettier.nvim")
 	use({ "folke/noice.nvim", requires = { "MunifTanjim/nui.nvim" } })
 	--Linter
-	use("MunifTanjim/eslint.nvim")
 	use({
 		"norcalli/nvim-colorizer.lua",
 	})
@@ -91,15 +88,6 @@ packer.startup(function(use)
 		},
 	})
 	use({
-		"NeogitOrg/neogit",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-			"sindrets/diffview.nvim",
-			"ibhagwan/fzf-lua",
-		},
-	})
-	use({
 		"f-person/git-blame.nvim",
 	})
 	--Terminal
@@ -117,24 +105,6 @@ packer.startup(function(use)
 			})
 		end,
 	})
-	--- Trouble
-	use({
-		"folke/trouble.nvim",
-		requires = {
-			"nvim-tree/nvim-web-devicons",
-		},
-	})
-	---MySql client
-	use({
-		"kndndrj/nvim-dbee",
-		required = {
-			"MunifTanjim/nui.nvim",
-		},
-		run = function()
-			require("dbee").install()
-		end,
-	})
-
 	-- indent blankline
 	use({
 		"lukas-reineke/indent-blankline.nvim",

@@ -1,9 +1,9 @@
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local null_ls = require("null-ls")
-local u = require("null-ls.utils")
-local h = require("null-ls.helpers")
 local opts = {
+	debug = true,
+
 	sources = {
 		null_ls.builtins.diagnostics.eslint_d,
 		null_ls.builtins.formatting.stylua,
@@ -27,3 +27,13 @@ local opts = {
 	},
 }
 null_ls.setup(opts)
+
+vim.api.nvim_exec(
+	[[
+  augroup RestoreCursorPos
+    autocmd!
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
+  augroup END
+]],
+	false
+)

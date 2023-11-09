@@ -110,21 +110,6 @@ _G.packer_plugins = {
     path = "/home/devas/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
     url = "https://github.com/tjdevries/colorbuddy.nvim"
   },
-  ["diffview.nvim"] = {
-    loaded = true,
-    path = "/home/devas/.local/share/nvim/site/pack/packer/start/diffview.nvim",
-    url = "https://github.com/sindrets/diffview.nvim"
-  },
-  ["eslint.nvim"] = {
-    loaded = true,
-    path = "/home/devas/.local/share/nvim/site/pack/packer/start/eslint.nvim",
-    url = "https://github.com/MunifTanjim/eslint.nvim"
-  },
-  ["fzf-lua"] = {
-    loaded = true,
-    path = "/home/devas/.local/share/nvim/site/pack/packer/start/fzf-lua",
-    url = "https://github.com/ibhagwan/fzf-lua"
-  },
   ["git-blame.nvim"] = {
     loaded = true,
     path = "/home/devas/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
@@ -186,20 +171,10 @@ _G.packer_plugins = {
     path = "/home/devas/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
-  neogit = {
-    loaded = true,
-    path = "/home/devas/.local/share/nvim/site/pack/packer/start/neogit",
-    url = "https://github.com/NeogitOrg/neogit"
-  },
   ["neosolarized.nvim"] = {
     loaded = true,
     path = "/home/devas/.local/share/nvim/site/pack/packer/start/neosolarized.nvim",
     url = "https://github.com/svrana/neosolarized.nvim"
-  },
-  ["night-owl.nvim"] = {
-    loaded = true,
-    path = "/home/devas/.local/share/nvim/site/pack/packer/start/night-owl.nvim",
-    url = "https://github.com/oxfist/night-owl.nvim"
   },
   ["noice.nvim"] = {
     loaded = true,
@@ -231,15 +206,15 @@ _G.packer_plugins = {
     path = "/home/devas/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
-  ["nvim-dbee"] = {
-    loaded = true,
-    path = "/home/devas/.local/share/nvim/site/pack/packer/start/nvim-dbee",
-    url = "https://github.com/kndndrj/nvim-dbee"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/devas/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-surround"] = {
+    loaded = true,
+    path = "/home/devas/.local/share/nvim/site/pack/packer/start/nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -271,11 +246,6 @@ _G.packer_plugins = {
     path = "/home/devas/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["prettier.nvim"] = {
-    loaded = true,
-    path = "/home/devas/.local/share/nvim/site/pack/packer/start/prettier.nvim",
-    url = "https://github.com/MunifTanjim/prettier.nvim"
-  },
   ["rust-tools.nvim"] = {
     loaded = true,
     path = "/home/devas/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
@@ -290,28 +260,18 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/devas/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["trouble.nvim"] = {
-    loaded = true,
-    path = "/home/devas/.local/share/nvim/site/pack/packer/start/trouble.nvim",
-    url = "https://github.com/folke/trouble.nvim"
-  },
-  ["vim-floaterm"] = {
-    loaded = true,
-    path = "/home/devas/.local/share/nvim/site/pack/packer/start/vim-floaterm",
-    url = "https://github.com/voldikss/vim-floaterm"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
 -- Config for: auto-session
 time([[Config for auto-session]], true)
 try_loadstring("\27LJ\2\nQ\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\14log_level\nerror\nsetup\17auto-session\frequire\0", "config", "auto-session")
 time([[Config for auto-session]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
